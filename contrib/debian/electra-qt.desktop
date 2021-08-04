@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=socialcoin
+Comment=socialcoin P2P Cryptocurrency
+Comment[fr]=socialcoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=socialcoin, eşten eşe kriptografik sanal para birimi
+Exec=socialcoin-qt %u
+Terminal=false
+Type=Application
+Icon=bitcoin128
+MimeType=x-scheme-handler/socialcoin;
+Categories=Office;Finance;

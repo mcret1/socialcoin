@@ -1,0 +1,26 @@
+[Unit]
+Description=socialcoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=socialcoin
+Group=socialcoin
+
+Type=forking
+PIDFile=/var/lib/socialcoind/socialcoind.pid
+
+ExecStart=/usr/bin/socialcoind -daemon -pid=/var/lib/socialcoind/socialcoind.pid \
+          -conf=/etc/socialcoin/socialcoin.conf -datadir=/var/lib/socialcoind
+
+ExecStop=-/usr/bin/socialcoin-cli -conf=/etc/socialcoin/socialcoin.conf \
+         -datadir=/var/lib/socialcoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target
